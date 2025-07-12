@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import HelpArea from './HelpArea';
+// This component is responsible for displaying the main content of the application,
 
 function MainContent() {
   const [helpVisible, setHelpVisible] = useState(false);
