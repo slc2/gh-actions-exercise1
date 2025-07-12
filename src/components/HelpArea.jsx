@@ -1,6 +1,8 @@
 import HelpBox from './HelpBox';
 import './HelpArea.css';
 
+const unused = 'This is an unused variable to ensure the file is not empty.';
+
 const HELP_ITEMS = [
   {
     id: 'h1',
