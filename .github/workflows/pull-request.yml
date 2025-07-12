@@ -1,6 +1,7 @@
 name: Pull Request Workflow
 on:
   pull_request:
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 jobs:
     lint-and-test:
