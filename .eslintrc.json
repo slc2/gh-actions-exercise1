@@ -4,6 +4,9 @@
     "node": true,
     "browser": true
   },
+  "ignorePatterns": [
+    "*test*"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
