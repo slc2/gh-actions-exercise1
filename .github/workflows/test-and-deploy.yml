@@ -1,5 +1,9 @@
 name: Test and Deploy Project
-on: [push, workflow_dispatch]
+on:
+    push:
+        branches:
+        - main
+    workflow_dispatch:
 jobs:
     test-and-deploy:
         runs-on: ubuntu-latest
