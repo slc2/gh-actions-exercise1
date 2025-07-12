@@ -1,0 +1,13 @@
+name: Manual PowerShell Example
+
+on: workflow_dispatch
+
+jobs:
+  run-powershell-script:
+    runs-on: windows-latest
+    steps:
+      - name: Run a PowerShell script
+        shell: pwsh
+        run: |
+          Write-Host "Hello from PowerShell in a pull_request workflow!"
+          Get-Date
