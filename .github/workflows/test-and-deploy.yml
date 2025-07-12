@@ -4,7 +4,7 @@ on:
         branches:
         - main
         paths-ignore:
-        - '.github/workflows/**' # prevents triggering workflow so don't change code at same time as workflows
+        - '.github/workflows/**' # prevents triggering workflow if only workflow files are changed
     workflow_dispatch:
 jobs:
     test-and-deploy:
