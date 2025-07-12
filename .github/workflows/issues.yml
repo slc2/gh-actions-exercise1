@@ -1,0 +1,12 @@
+name: Issues Workflow
+on: issues
+jobs:
+  issue-handler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Handle issue
+        run: |
+          echo "Issue title: ${{ github.event.issue.title }}"
+          echo "Issue body: ${{ github.event.issue.body }}"
+          echo "Handling issue..."
+          # Add your issue handling logic here
