@@ -31,7 +31,7 @@ jobs:
                 name: build-artifacts
                 path: |
                     dist
-                    package.json #this isn't really needed but used as example of multiple paths/files
+                    package.json
     deploy:
         needs: build
         runs-on: ubuntu-latest
