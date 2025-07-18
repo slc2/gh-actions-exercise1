@@ -18,6 +18,8 @@ jobs:
     build:
         runs-on: ubuntu-latest
         needs: test
+        outputs:
+            js-script-file: ${{ steps.jsscript.outputs.js-script-file }}
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
@@ -25,6 +27,9 @@ jobs:
               run: npm ci
             - name: Build project
               run: npm run build
+            - name: Set output for JS script file
+              id: jsscript
+              run: find dist/assets/*.js -type f -execdir echo "js-script-file={}"  >> $GITHUB_OUTPUT \;
             - name: Archive build artifacts
               uses: actions/upload-artifact@v4
               with:
@@ -39,6 +44,8 @@ jobs:
               with:
                 name: build-artifacts
                 path: dist
+            - name: echo the build output js script file name
+              run: echo "JS script file: ${{ needs.build.outputs.js-script-file }}"
             - name: List current directory to see the that the artifacts are present
               run: ls -laR
             - name: Deploy
