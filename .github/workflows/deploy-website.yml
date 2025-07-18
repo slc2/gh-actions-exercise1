@@ -29,7 +29,7 @@ jobs:
               uses: actions/upload-artifact@v4
               with:
                 name: build-artifacts
-                path: ./dist/
+                path: dist
     deploy:
         needs: build
         runs-on: ubuntu-latest
@@ -38,6 +38,7 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                 name: build-artifacts
+                path: dist
             - name: List current directory to see the that the artifacts are present
               run: ls -la
             - name: Deploy
