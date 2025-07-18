@@ -40,6 +40,6 @@ jobs:
                 name: build-artifacts
                 path: dist
             - name: List current directory to see the that the artifacts are present
-              run: ls -la
+              run: ls -laR
             - name: Deploy
               run: echo "Deploying to production server..." # Replace with actual deployment command
